@@ -1,1 +1,26 @@
-
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-argocd-hpa
+  namespace: argo1
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    path: quickstart-demo
+    repoURL: https://github.com/rimjhimsinghh/nginx-demo
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argo1
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: true
+    syncOptions:
+    - CreateNamespace=true
+    - PrunePropagationPolicy=background
+    - PruneLast=true
+    - ApplyOutOfSyncOnly=true
