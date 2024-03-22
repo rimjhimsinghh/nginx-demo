@@ -22,17 +22,17 @@ metadata:
     run: nginx
 spec:
   allocateLoadBalancerNodePorts: true
-  clusterIP: 10.100.34.116
-  clusterIPs:
-  - 10.100.34.116
-  externalTrafficPolicy: Cluster
-  internalTrafficPolicy: Cluster
-  ipFamilies:
-  - IPv4
-  ipFamilyPolicy: SingleStack
+  # clusterIP: 10.100.34.116
+  # clusterIPs:
+  # - 10.100.34.116
+  # externalTrafficPolicy: Cluster
+  # internalTrafficPolicy: Cluster
+  # ipFamilies:
+  # - IPv4
+  # ipFamilyPolicy: SingleStack
   ports:
   - name: http
-    nodePort: 30718
+    # nodePort: 30718
     port: 8080
     protocol: TCP
     targetPort: 80
