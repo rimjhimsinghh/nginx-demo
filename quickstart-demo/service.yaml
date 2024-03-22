@@ -1,56 +1,56 @@
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: nginx
-#   labels:
-#     run: nginx
-# spec:
-#   type: NodePort
-#   ports:
-#   - port: 8080
-#     targetPort: 80
-#     protocol: TCP
-#     name: http
-#   selector:
-#     run: nginx
-
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"argocd.argoproj.io/instance":"demo-nginx","run":"nginx"},"name":"nginx","namespace":"default"},"spec":{"ports":[{"name":"http","port":8080,"protocol":"TCP","targetPort":80}],"selector":{"run":"nginx"},"type":"NodePort"}}
-  creationTimestamp: "2024-03-22T08:37:08Z"
-  finalizers:
-  - service.kubernetes.io/load-balancer-cleanup
-  labels:
-    argocd.argoproj.io/instance: demo-nginx
-    run: nginx
   name: nginx
-  namespace: default
-  resourceVersion: "307869746"
-  uid: ed208478-76c5-4ec8-be37-b5f518c67196
+  labels:
+    run: nginx
 spec:
-  allocateLoadBalancerNodePorts: true
-  clusterIP: 10.100.34.116
-  clusterIPs:
-  - 10.100.34.116
-  externalTrafficPolicy: Cluster
-  internalTrafficPolicy: Cluster
-  ipFamilies:
-  - IPv4
-  ipFamilyPolicy: SingleStack
+  type: NodePort
   ports:
-  - name: http
-    nodePort: 30718
-    port: 8080
-    protocol: TCP
+  - port: 8080
     targetPort: 80
+    protocol: TCP
+    name: http
   selector:
     run: nginx
-  sessionAffinity: None
-  type: LoadBalancer
-status:
-  loadBalancer:
-    ingress:
-    - hostname: aed20847876c54ec8be37b5f518c6719-2047914429.us-west-2.elb.amazonaws.com
+
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   annotations:
+#     kubectl.kubernetes.io/last-applied-configuration: |
+#       {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"argocd.argoproj.io/instance":"demo-nginx","run":"nginx"},"name":"nginx","namespace":"default"},"spec":{"ports":[{"name":"http","port":8080,"protocol":"TCP","targetPort":80}],"selector":{"run":"nginx"},"type":"NodePort"}}
+#   creationTimestamp: "2024-03-22T08:37:08Z"
+#   finalizers:
+#   - service.kubernetes.io/load-balancer-cleanup
+#   labels:
+#     argocd.argoproj.io/instance: demo-nginx
+#     run: nginx
+#   name: nginx
+#   namespace: default
+#   resourceVersion: "307869746"
+#   uid: ed208478-76c5-4ec8-be37-b5f518c67196
+# spec:
+#   allocateLoadBalancerNodePorts: true
+#   clusterIP: 10.100.34.116
+#   clusterIPs:
+#   - 10.100.34.116
+#   externalTrafficPolicy: Cluster
+#   internalTrafficPolicy: Cluster
+#   ipFamilies:
+#   - IPv4
+#   ipFamilyPolicy: SingleStack
+#   ports:
+#   - name: http
+#     nodePort: 30718
+#     port: 8080
+#     protocol: TCP
+#     targetPort: 80
+#   selector:
+#     run: nginx
+#   sessionAffinity: None
+#   type: LoadBalancer
+# status:
+#   loadBalancer:
+#     ingress:
+#     - hostname: aed20847876c54ec8be37b5f518c6719-2047914429.us-west-2.elb.amazonaws.com
