@@ -23,7 +23,7 @@ metadata:
     alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS-1-2-Ext-2018-06
 spec:
   rules:
-  - host:rimjhim-argocd-hpa.aidash.io
+  - host: rimjhim-argocd-hpa.aidash.io
     http:
       paths:
       - path: /
