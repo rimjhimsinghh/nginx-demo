@@ -11,7 +11,7 @@ spec:
     metadata:
       labels:
         run: nginx
-      spec:
+    spec:
       containers:
       - name: nginx
         image: nginx
