@@ -40,7 +40,7 @@ spec:
     run: nginx
   sessionAffinity: None
   type: LoadBalancer
-status:
-  loadBalancer:
-    ingress:
-    - hostname: aed20847876c54ec8be37b5f518c6719-2047914429.us-west-2.elb.amazonaws.com
+# status:
+#   loadBalancer:
+#     ingress:
+#     - hostname: aed20847876c54ec8be37b5f518c6719-2047914429.us-west-2.elb.amazonaws.com
