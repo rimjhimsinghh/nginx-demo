@@ -9,7 +9,7 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:296501350192:certificate/10744526-c550-4f5a-b796-a13e7e2499f3
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:296501350192:certificate/a3f0a044-d56e-4d69-becb-7acff387f46d
     alb.ingress.kubernetes.io/healthcheck-protocol: HTTP
     alb.ingress.kubernetes.io/healthcheck-port: '8080'
     alb.ingress.kubernetes.io/healthcheck-path: /actuator/health
@@ -23,7 +23,7 @@ metadata:
     alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS-1-2-Ext-2018-06
 spec:
   rules:
-  - host: rimjhim-argocd-hpa.aidash.io
+  - host: rimjhim-argocd-hpa.aidash.org
     http:
       paths:
       - path: /
